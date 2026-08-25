@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vlogvicy</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0d4ee;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(255, 214, 237, 0.945) 0%, rgba(255, 230, 245, 0.95) 100%);
+            color: #d31e82;
+            text-align: center;
+            padding: 20px 30px;
+            border-top: 10px solid hsl(328, 100%, 88%);
+            border-bottom: 10px solid hsl(328, 100%, 88%);
+            border-left: 20px solid hsl(328, 100%, 88%);
+            border-right: 20px solid hsl(328, 100%, 88%);
+            box-shadow: 0 4px 15px rgba(211, 30, 130, 0.2), inset 0 0 20px rgba(211, 30, 130, 0.1);
+            position: relative;
+        }
+
+        header::before {
+            content: "💕 ✨ 🌸 ✨ 💕";
+            display: block;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            letter-spacing: 8px;
+        }
+
+        header::after {
+            content: "💕 ✨ 🌸 ✨ 💕";
+            display: block;
+            font-size: 1.3em;
+            margin-top: 10px;
+            letter-spacing: 8px;
+        }
+
+        main {
+            background-color: rgb(255, 251, 253);
+            color: rgb(255, 183, 225);
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.8em;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 12px;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 999px;
+            background: #ffd9eb;
+            color: #d31e82;
+            font-size: 2.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(211, 30, 130, 0.2);
+        }
+
+        button.estrela {
+            background: #fff3b0;
+            color: #d9a700;
+            box-shadow: 0 4px 12px rgba(217, 167, 0, 0.2);
+        }
+
+        button span {
+            font-size: 1.8rem;
+            min-width: 1ch;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>𝓂𝓎 𝓋𝓁ℴℊ</h1>
+        <p>𝓬𝓸𝓶 𝓿𝓲𝓬𝔂🌸</p>
+        <h1>𝒹𝒾𝒸𝒶 𝒹ℯ 𝒶𝓊𝓉ℴ𝒸𝓊𝒾𝒹𝒶𝒹ℴ</h1>
+        <img src="assets/cosmos_856692871.jpeg" alt="Minha imagem">
+    </header>
+
+    <main>
+        <h2>seja bem-vindo ao meu blog de vlogs! Aqui você encontrará dicas de autocuidado e amor próprio✨</h2>
+        <p>Se você está procurando maneiras de se cuidar melhor e se sentir mais confiante, você veio ao lugar certo! Aqui estão algumas dicas de autocuidado que podem ajudá-la a se sentir mais confiante e autêntica:</p>
+        <div class="botoes">
+            <button>💗 <span>0</span></button>
+            <button class="estrela">🌟 <span>0</span></button>
+        </div>
+    </main>
+</body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach((botao) => {
+    let curtiu = false;
+        botao.curtiu = false;
+        botao.addEventListener("click", () => botaoClicado(botao));
+    });
+
+    function botaoClicado(botao) {
+        console.log("fui clicado");
+        const texto = botao.querySelector("span");
+        const quantidade = Number(texto.textContent);
+
+        if (botao.curtiu === false) {
+            texto.textContent = quantidade + 1;
+            botao.curtiu = true;
+        } else {
+            texto.textContent = quantidade - 1;
+            botao.curtiu = false;
+        }
+    }
+</script>
+</html>
